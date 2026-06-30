@@ -75,6 +75,8 @@
     .hero-inner .lead{margin-bottom:2em;font-size:clamp(1.06rem,1.7vw,1.3rem);color:#eef3fa;max-width:46ch}
     .hero-inner h1,.hero-inner .lead,.hero-inner .eyebrow{text-shadow:0 2px 18px rgba(2,6,16,.6),0 1px 4px rgba(2,6,16,.7)}
     .hero-ctas{display:flex;flex-wrap:wrap;gap:13px}
+    .hero-ctas .btn-ghost{background:rgba(6,13,24,.5);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:#fff;border-color:rgba(255,255,255,.55)}
+    .hero-ctas .btn-ghost:hover{background:rgba(6,13,24,.68);border-color:var(--accent)}
 
     #impact{padding-block:clamp(40px,5vw,64px);border-bottom:1px solid var(--border)}
     .impact-grid{display:grid;grid-template-columns:repeat(4,1fr)}
@@ -202,6 +204,19 @@
     }
     @media (max-width:600px){.sol-card{flex:1 1 100%}}
     @media (max-width:480px){.hero-ctas .btn{width:100%;justify-content:center}}
+      /* vendors mega-dropdown */
+    .nav-dd{position:relative}
+    .nav-dd>.nav-dd-toggle::after{content:"\25BE";font-size:.7em;margin-left:5px;opacity:.7}
+    .nav-dd-menu{position:absolute;top:calc(100% + 8px);right:0;left:auto;display:none;grid-template-columns:repeat(3,minmax(146px,1fr));gap:14px 22px;background:rgba(8,15,27,.99);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:0 26px 64px rgba(0,0,0,.55);backdrop-filter:blur(14px);z-index:60}
+    .nav-dd:hover .nav-dd-menu,.nav-dd:focus-within .nav-dd-menu{display:grid}
+    .dd-cat{display:flex;flex-direction:column}
+    .nav-dd-menu a{padding:4px 0!important;border-radius:0!important;background:none!important;font-size:.86rem;color:var(--muted)!important;white-space:nowrap}
+    .nav-dd-menu a:hover{color:var(--accent-text)!important}
+    .nav-dd-menu .dd-cat-link{font-family:var(--display);font-weight:600;font-size:.9rem;color:var(--text)!important;padding-bottom:6px!important;margin-bottom:5px;border-bottom:1px solid var(--border)}
+    @media (max-width:860px){
+      .nav-dd-menu{position:static;display:grid;grid-template-columns:1fr;background:none;border:0;box-shadow:none;padding:4px 0 8px 14px;backdrop-filter:none}
+      .nav-dd>.nav-dd-toggle::after{display:none}
+    }
   </style>
 </head>
 <body>
@@ -216,7 +231,15 @@
       <ul class="nav-links">
         <li><a href="#solutions">Solutions</a></li>
         <li><a href="#why-rain">Why us</a></li>
-        <li><a href="#vendors">Vendors</a></li>
+        <li class="nav-dd"><a href="index.html#solutions" class="nav-dd-toggle">Vendors</a>
+          <div class="nav-dd-menu">
+            <div class="dd-cat"><a class="dd-cat-link" href="solutions-endpoint.html">Endpoint Security</a><a href="vendor-eset.html">ESET</a><a href="vendor-bitdefender.html">Bitdefender</a><a href="vendor-heimdal.html">Heimdal</a><a href="vendor-guardz.html">Guardz</a><a href="vendor-vipre.html">VIPRE</a><a href="vendor-avast.html">Avast Business</a></div>
+            <div class="dd-cat"><a class="dd-cat-link" href="solutions-email.html">Email Security</a><a href="vendor-proofpoint.html">Proofpoint</a><a href="vendor-barracuda.html">Barracuda</a><a href="vendor-trustifi.html">Trustifi</a><a href="vendor-sendmarc.html">Sendmarc</a></div>
+            <div class="dd-cat"><a class="dd-cat-link" href="solutions-backup.html">Backup &amp; Recovery</a><a href="vendor-macrium.html">Macrium</a><a href="vendor-redstor.html">Redstor</a></div>
+            <div class="dd-cat"><a class="dd-cat-link" href="solutions-awareness.html">Security Awareness</a><a href="vendor-ninjio.html">NINJIO</a></div>
+            <div class="dd-cat"><a class="dd-cat-link" href="solutions-it-management.html">RMM &amp; IT Management</a><a href="vendor-atera.html">Atera</a><a href="vendor-pulseway.html">Pulseway</a></div>
+          </div>
+        </li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <label for="nav-toggle" class="nav-burger" aria-label="Toggle menu"><span></span><span></span><span></span></label>
@@ -364,213 +387,6 @@
       </div>
     </section>
 
-    <section id="vendors">
-      <div class="wrap">
-        <div class="sec-head reveal">
-          <span class="eyebrow">Our portfolio</span>
-          <h2>15 vendors the channel trusts</h2>
-          <p class="lead">Each brand we carry earns its place through real protection and real channel value, across every major category of business security.</p>
-        </div>
-        <div class="vcard-grid">
-          <a class="vendor-card reveal" href="vendor-eset.html">
-            <img class="v-img" src="ai_eset.jpg" alt="ESET Endpoint Security" />
-            <div class="v-body">
-              <span class="v-cat">Endpoint Security</span>
-              <h3>ESET</h3>
-              <p class="v-tag">Lightweight. Powerful. Trusted.</p>
-              <p class="v-desc">Multi-layered endpoint protection with advanced machine learning, exploit prevention, and ransomware shield.</p>
-              <div class="v-foot">
-                <span class="v-rating"><svg viewBox="0 0 24 24"><path d="m12 2 3 6.9 7.6.6-5.8 5 1.8 7.4L12 18l-6.4 3.9 1.8-7.4-5.8-5 7.6-.6z"/></svg>4.6</span>
-                <span class="v-link">Learn more →</span>
-              </div>
-            </div>
-          </a>
-          <a class="vendor-card reveal" href="vendor-bitdefender.html">
-            <img class="v-img" src="ai_bitdefender.jpg" alt="Bitdefender Endpoint Security" />
-            <div class="v-body">
-              <span class="v-cat">Endpoint Security</span>
-              <h3>Bitdefender</h3>
-              <p class="v-tag">Unified. Intelligent. Secure.</p>
-              <p class="v-desc">Unified endpoint protection with advanced threat defense, risk analytics, and patch management in a single platform.</p>
-              <div class="v-foot">
-                <span class="v-rating"><svg viewBox="0 0 24 24"><path d="m12 2 3 6.9 7.6.6-5.8 5 1.8 7.4L12 18l-6.4 3.9 1.8-7.4-5.8-5 7.6-.6z"/></svg>4.6</span>
-                <span class="v-link">Learn more →</span>
-              </div>
-            </div>
-          </a>
-          <a class="vendor-card reveal" href="vendor-heimdal.html">
-            <img class="v-img" src="ai_heimdal.jpg" alt="Heimdal Endpoint Security" />
-            <div class="v-body">
-              <span class="v-cat">Endpoint Security</span>
-              <h3>Heimdal</h3>
-              <p class="v-tag">One Platform. Total Security.</p>
-              <p class="v-desc">Unified XDR platform delivering advanced threat detection and response across endpoints, networks, email, and identities.</p>
-              <div class="v-foot">
-                <span class="v-rating"><svg viewBox="0 0 24 24"><path d="m12 2 3 6.9 7.6.6-5.8 5 1.8 7.4L12 18l-6.4 3.9 1.8-7.4-5.8-5 7.6-.6z"/></svg>4.6</span>
-                <span class="v-link">Learn more →</span>
-              </div>
-            </div>
-          </a>
-          <a class="vendor-card reveal" href="vendor-guardz.html">
-            <img class="v-img" src="ai_guardz.jpg" alt="Guardz Endpoint Security" />
-            <div class="v-body">
-              <span class="v-cat">Endpoint Security</span>
-              <h3>Guardz</h3>
-              <p class="v-tag">Security Simplified. Business Amplified.</p>
-              <p class="v-desc">Unified, AI-powered cybersecurity built for MSPs and SMBs covering endpoints, email, identity, and cloud in a single platform.</p>
-              <div class="v-foot">
-                <span class="v-rating"><svg viewBox="0 0 24 24"><path d="m12 2 3 6.9 7.6.6-5.8 5 1.8 7.4L12 18l-6.4 3.9 1.8-7.4-5.8-5 7.6-.6z"/></svg>4.6</span>
-                <span class="v-link">Learn more →</span>
-              </div>
-            </div>
-          </a>
-          <a class="vendor-card reveal" href="vendor-vipre.html">
-            <img class="v-img" src="ai_vipre.jpg" alt="VIPRE Endpoint Security" />
-            <div class="v-body">
-              <span class="v-cat">Endpoint Security</span>
-              <h3>VIPRE</h3>
-              <p class="v-tag">Simple. Effective. Affordable.</p>
-              <p class="v-desc">Simple, effective endpoint protection designed for small and medium businesses with easy management.</p>
-              <div class="v-foot">
-                <span class="v-rating"><svg viewBox="0 0 24 24"><path d="m12 2 3 6.9 7.6.6-5.8 5 1.8 7.4L12 18l-6.4 3.9 1.8-7.4-5.8-5 7.6-.6z"/></svg>4.1</span>
-                <span class="v-link">Learn more →</span>
-              </div>
-            </div>
-          </a>
-          <a class="vendor-card reveal" href="vendor-avast.html">
-            <img class="v-img" src="ai_avast.jpg" alt="Avast Business Endpoint Security" />
-            <div class="v-body">
-              <span class="v-cat">Endpoint Security</span>
-              <h3>Avast Business</h3>
-              <p class="v-tag">Trusted. Reliable. Business-Ready.</p>
-              <p class="v-desc">Business-grade antivirus and endpoint protection with centralized management and threat detection.</p>
-              <div class="v-foot">
-                <span class="v-rating"><svg viewBox="0 0 24 24"><path d="m12 2 3 6.9 7.6.6-5.8 5 1.8 7.4L12 18l-6.4 3.9 1.8-7.4-5.8-5 7.6-.6z"/></svg>4</span>
-                <span class="v-link">Learn more →</span>
-              </div>
-            </div>
-          </a>
-          <a class="vendor-card reveal" href="vendor-proofpoint.html">
-            <img class="v-img" src="ai_proofpoint.jpg" alt="Proofpoint Email Security" />
-            <div class="v-body">
-              <span class="v-cat">Email Security</span>
-              <h3>Proofpoint</h3>
-              <p class="v-tag">Protect People. Defend Data.</p>
-              <p class="v-desc">Advanced email security that protects against phishing, malware, and credential theft through URL defense and attachment sandboxing.</p>
-              <div class="v-foot">
-                <span class="v-rating"><svg viewBox="0 0 24 24"><path d="m12 2 3 6.9 7.6.6-5.8 5 1.8 7.4L12 18l-6.4 3.9 1.8-7.4-5.8-5 7.6-.6z"/></svg>4.7</span>
-                <span class="v-link">Learn more →</span>
-              </div>
-            </div>
-          </a>
-          <a class="vendor-card reveal" href="vendor-barracuda.html">
-            <img class="v-img" src="ai_barracuda.jpg" alt="Barracuda Email Security" />
-            <div class="v-body">
-              <span class="v-cat">Email Security</span>
-              <h3>Barracuda</h3>
-              <p class="v-tag">Comprehensive. Reliable. Protected.</p>
-              <p class="v-desc">Comprehensive email security with spam filtering, malware protection, and data loss prevention.</p>
-              <div class="v-foot">
-                <span class="v-rating"><svg viewBox="0 0 24 24"><path d="m12 2 3 6.9 7.6.6-5.8 5 1.8 7.4L12 18l-6.4 3.9 1.8-7.4-5.8-5 7.6-.6z"/></svg>4.4</span>
-                <span class="v-link">Learn more →</span>
-              </div>
-            </div>
-          </a>
-          <a class="vendor-card reveal" href="vendor-trustifi.html">
-            <img class="v-img" src="ai_trustifi.jpg" alt="Trustifi Email Security" />
-            <div class="v-body">
-              <span class="v-cat">Email Security</span>
-              <h3>Trustifi</h3>
-              <p class="v-tag">Simple. Secure. Compliant.</p>
-              <p class="v-desc">Easy-to-use email encryption and security solution with one-click protection and compliance features.</p>
-              <div class="v-foot">
-                <span class="v-rating"><svg viewBox="0 0 24 24"><path d="m12 2 3 6.9 7.6.6-5.8 5 1.8 7.4L12 18l-6.4 3.9 1.8-7.4-5.8-5 7.6-.6z"/></svg>4.3</span>
-                <span class="v-link">Learn more →</span>
-              </div>
-            </div>
-          </a>
-          <a class="vendor-card reveal" href="vendor-sendmarc.html">
-            <img class="v-img" src="ai_sendmarc.jpg" alt="Sendmarc Email Authentication" />
-            <div class="v-body">
-              <span class="v-cat">Email Authentication</span>
-              <h3>Sendmarc</h3>
-              <p class="v-tag">Protect Your Domain. Prevent Phishing.</p>
-              <p class="v-desc">DMARC implementation and monitoring solution to protect your domain from email spoofing and phishing.</p>
-              <div class="v-foot">
-                <span class="v-rating"><svg viewBox="0 0 24 24"><path d="m12 2 3 6.9 7.6.6-5.8 5 1.8 7.4L12 18l-6.4 3.9 1.8-7.4-5.8-5 7.6-.6z"/></svg>4.3</span>
-                <span class="v-link">Learn more →</span>
-              </div>
-            </div>
-          </a>
-          <a class="vendor-card reveal" href="vendor-macrium.html">
-            <img class="v-img" src="ai_macrium.jpg" alt="Macrium Backup &amp; Recovery" />
-            <div class="v-body">
-              <span class="v-cat">Backup &amp; Recovery</span>
-              <h3>Macrium</h3>
-              <p class="v-tag">Reliable. Fast. Trusted.</p>
-              <p class="v-desc">Trusted endpoint backup solution for homes and businesses. Fast, reliable disk imaging and backup with rapid recovery capabilities.</p>
-              <div class="v-foot">
-                <span class="v-rating"><svg viewBox="0 0 24 24"><path d="m12 2 3 6.9 7.6.6-5.8 5 1.8 7.4L12 18l-6.4 3.9 1.8-7.4-5.8-5 7.6-.6z"/></svg>4.5</span>
-                <span class="v-link">Learn more →</span>
-              </div>
-            </div>
-          </a>
-          <a class="vendor-card reveal" href="vendor-redstor.html">
-            <img class="v-img" src="ai_redstor.jpg" alt="Redstor Backup &amp; Recovery" />
-            <div class="v-body">
-              <span class="v-cat">Backup &amp; Recovery</span>
-              <h3>Redstor</h3>
-              <p class="v-tag">Cloud-First. Instant Recovery. Protected.</p>
-              <p class="v-desc">Cloud-first backup and recovery solution with instant data access and ransomware protection.</p>
-              <div class="v-foot">
-                <span class="v-rating"><svg viewBox="0 0 24 24"><path d="m12 2 3 6.9 7.6.6-5.8 5 1.8 7.4L12 18l-6.4 3.9 1.8-7.4-5.8-5 7.6-.6z"/></svg>4.2</span>
-                <span class="v-link">Learn more →</span>
-              </div>
-            </div>
-          </a>
-          <a class="vendor-card reveal" href="vendor-ninjio.html">
-            <img class="v-img" src="ai_ninjio.jpg" alt="NINJIO Security Awareness" />
-            <div class="v-body">
-              <span class="v-cat">Security Awareness</span>
-              <h3>NINJIO</h3>
-              <p class="v-tag">Engage. Educate. Empower.</p>
-              <p class="v-desc">Engaging security awareness training that teaches employees to recognize and avoid cyber threats through storytelling.</p>
-              <div class="v-foot">
-                <span class="v-rating"><svg viewBox="0 0 24 24"><path d="m12 2 3 6.9 7.6.6-5.8 5 1.8 7.4L12 18l-6.4 3.9 1.8-7.4-5.8-5 7.6-.6z"/></svg>4.4</span>
-                <span class="v-link">Learn more →</span>
-              </div>
-            </div>
-          </a>
-          <a class="vendor-card reveal" href="vendor-atera.html">
-            <img class="v-img" src="ai_atera.jpg" alt="Atera RMM &amp; IT Management" />
-            <div class="v-body">
-              <span class="v-cat">RMM &amp; IT Management</span>
-              <h3>Atera</h3>
-              <p class="v-tag">All-in-One. AI-Powered. Efficient.</p>
-              <p class="v-desc">AI-powered IT management platform combining RMM, PSA, Helpdesk, and automation for MSPs and IT departments.</p>
-              <div class="v-foot">
-                <span class="v-rating"><svg viewBox="0 0 24 24"><path d="m12 2 3 6.9 7.6.6-5.8 5 1.8 7.4L12 18l-6.4 3.9 1.8-7.4-5.8-5 7.6-.6z"/></svg>4.5</span>
-                <span class="v-link">Learn more →</span>
-              </div>
-            </div>
-          </a>
-          <a class="vendor-card reveal" href="vendor-pulseway.html">
-            <img class="v-img" src="ai_pulseway.jpg" alt="Pulseway RMM &amp; IT Management" />
-            <div class="v-body">
-              <span class="v-cat">RMM &amp; IT Management</span>
-              <h3>Pulseway</h3>
-              <p class="v-tag">Next-Gen RMM. Built for MSPs.</p>
-              <p class="v-desc">All-in-one remote monitoring and management software that helps MSPs and IT teams reduce downtime through automation.</p>
-              <div class="v-foot">
-                <span class="v-rating"><svg viewBox="0 0 24 24"><path d="m12 2 3 6.9 7.6.6-5.8 5 1.8 7.4L12 18l-6.4 3.9 1.8-7.4-5.8-5 7.6-.6z"/></svg>4.5</span>
-                <span class="v-link">Learn more →</span>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
     <section id="promise">
       <div class="wrap">
         <div class="pull reveal">
@@ -666,7 +482,7 @@
         <ul>
           <li><a href="#solutions">Solutions</a></li>
           <li><a href="#why-rain">Why us</a></li>
-          <li><a href="#vendors">Vendors</a></li>
+          <li><a href="index.html#solutions">Vendors</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
