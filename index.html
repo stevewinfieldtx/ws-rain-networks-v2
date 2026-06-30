@@ -69,10 +69,11 @@
     #hero{padding:0;min-height:88vh;display:flex;align-items:center;overflow:hidden}
     .hero-media{position:absolute;inset:0;z-index:0}
     .hero-bg{width:100%;height:100%;object-fit:cover}
-    .hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,13,24,.62) 0%,rgba(6,13,24,.8) 58%,rgba(6,13,24,.97) 100%)}
+    .hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(6,13,24,.62) 0%,rgba(6,13,24,.30) 38%,transparent 66%)}
     .hero-inner{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;padding:96px 24px;width:100%}
     .hero-inner h1{font-size:clamp(2.6rem,6vw,4.7rem);font-weight:700;max-width:15ch;margin:.34em 0 .42em}
-    .hero-inner .lead{margin-bottom:2em;font-size:clamp(1.06rem,1.7vw,1.3rem);color:#c6d2e2;max-width:46ch}
+    .hero-inner .lead{margin-bottom:2em;font-size:clamp(1.06rem,1.7vw,1.3rem);color:#eef3fa;max-width:46ch}
+    .hero-inner h1,.hero-inner .lead,.hero-inner .eyebrow{text-shadow:0 2px 18px rgba(2,6,16,.6),0 1px 4px rgba(2,6,16,.7)}
     .hero-ctas{display:flex;flex-wrap:wrap;gap:13px}
 
     #impact{padding-block:clamp(40px,5vw,64px);border-bottom:1px solid var(--border)}
@@ -86,8 +87,9 @@
     .sec-head h2{font-size:clamp(1.9rem,3.6vw,2.8rem);font-weight:600;margin:.34em 0 .4em}
     .sec-head.center{margin-inline:auto}
 
-    .sol-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
-    .sol-card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:transform .3s ease,border-color .3s ease}
+    .sol-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:18px}
+    .sol-card{display:flex;flex-direction:column;flex:0 1 calc(33.333% - 12px);background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:transform .3s ease,border-color .3s ease}
+    .sol-link{margin-top:auto;color:var(--accent-text);font-weight:600;font-size:.92rem}
     .sol-card:hover{transform:translateY(-6px);border-color:var(--accent)}
     .sol-card .thumb{aspect-ratio:16/10;overflow:hidden}
     .sol-card .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
@@ -178,6 +180,7 @@
     }
 
     @media (max-width:900px){
+      .sol-card{flex:0 1 calc(50% - 9px)}
       .why-grid{grid-template-columns:1fr}
       .steps{grid-template-columns:1fr}
       .step{border-left:0;padding:0;border-top:1px solid var(--border);padding-top:26px;margin-top:26px}
@@ -197,6 +200,7 @@
       .stat:nth-child(odd){border-left:0;padding-left:0}
       .foot-grid{grid-template-columns:1fr;gap:30px}
     }
+    @media (max-width:600px){.sol-card{flex:1 1 100%}}
     @media (max-width:480px){.hero-ctas .btn{width:100%;justify-content:center}}
   </style>
 </head>
@@ -227,7 +231,6 @@
         <video class="hero-bg" autoplay muted loop playsinline poster="hero_city_storm.jpg">
           <source src="RainNetworksVideo.mp4" type="video/mp4" />
         </video>
-        <div class="hero-overlay"></div>
       </div>
       <div class="hero-inner">
         <span class="eyebrow">Value-added cybersecurity distribution since 2003</span>
@@ -259,66 +262,46 @@
           <p class="lead">Every product we carry is vetted for the channel. We match you to the right fit and stand behind it with pre-sales and post-sales support.</p>
         </div>
         <div class="sol-grid">
-          <div class="sol-card reveal">
+          <a class="sol-card reveal" href="solutions-endpoint.html">
             <div class="thumb"><img src="server_room_blue.jpg" alt="Endpoint security illustration" /></div>
             <div class="sol-body">
               <h3>Endpoint Security</h3>
-              <p>Protect desktops, laptops, and servers with layered, lightweight defense against malware and ransomware.</p>
-              <ul class="feat-list">
-                <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"/></svg>Machine-learning threat detection</li>
-                <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"/></svg>Low system impact</li>
-                <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"/></svg>Centralized cloud management</li>
-              </ul>
+              <p>Layered, lightweight defense for desktops, laptops, and servers against malware and ransomware.</p>
+              <span class="sol-link">View 6 solutions →</span>
             </div>
-          </div>
-          <div class="sol-card reveal">
+          </a>
+          <a class="sol-card reveal" href="solutions-email.html">
             <div class="thumb"><img src="rain_on_glass.jpg" alt="Email security illustration" /></div>
             <div class="sol-body">
               <h3>Email Security</h3>
               <p>Stop phishing, business email compromise, and data loss before it reaches the inbox.</p>
-              <ul class="feat-list">
-                <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"/></svg>URL defense and sandboxing</li>
-                <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"/></svg>DMARC authentication</li>
-                <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"/></svg>Data loss prevention</li>
-              </ul>
+              <span class="sol-link">View 4 solutions →</span>
             </div>
-          </div>
-          <div class="sol-card reveal">
+          </a>
+          <a class="sol-card reveal" href="solutions-backup.html">
             <div class="thumb"><img src="container_logistics.jpg" alt="Backup and recovery illustration" /></div>
             <div class="sol-body">
               <h3>Backup &amp; Recovery</h3>
-              <p>Keep clients running with fast disk imaging, cloud backup, and rapid recovery from any disruption.</p>
-              <ul class="feat-list">
-                <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"/></svg>Fast disk imaging</li>
-                <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"/></svg>Bare-metal recovery</li>
-                <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"/></svg>Ransomware-resilient storage</li>
-              </ul>
+              <p>Fast disk imaging, cloud backup, and rapid recovery that keeps clients running through any disruption.</p>
+              <span class="sol-link">View 2 solutions →</span>
             </div>
-          </div>
-          <div class="sol-card reveal">
+          </a>
+          <a class="sol-card reveal" href="solutions-awareness.html">
             <div class="thumb"><img src="workspace_monitors.jpg" alt="Security awareness training illustration" /></div>
             <div class="sol-body">
               <h3>Security Awareness</h3>
               <p>Turn employees into a first line of defense with engaging, story-driven training.</p>
-              <ul class="feat-list">
-                <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"/></svg>Story-driven episodes</li>
-                <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"/></svg>Phishing simulations</li>
-                <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"/></svg>Compliance reporting</li>
-              </ul>
+              <span class="sol-link">View solution →</span>
             </div>
-          </div>
-          <div class="sol-card reveal">
+          </a>
+          <a class="sol-card reveal" href="solutions-it-management.html">
             <div class="thumb"><img src="city_intersection_night.jpg" alt="RMM and IT management illustration" /></div>
             <div class="sol-body">
               <h3>RMM &amp; IT Management</h3>
-              <p>Streamline operations with unified remote monitoring, automation, and helpdesk tools for modern MSPs.</p>
-              <ul class="feat-list">
-                <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"/></svg>Remote monitoring and management</li>
-                <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"/></svg>Automation and patching</li>
-                <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"/></svg>Integrated helpdesk and PSA</li>
-              </ul>
+              <p>Unified remote monitoring, automation, and helpdesk tools built for modern MSPs.</p>
+              <span class="sol-link">View 2 solutions →</span>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </section>
@@ -710,5 +693,9 @@
     </div>
   </footer>
 
+  <script>
+    (function(){var v=document.querySelector('video.hero-bg');if(!v)return;var set=function(){try{v.playbackRate=0.5;}catch(e){}};set();
+      ['loadedmetadata','canplay','play'].forEach(function(ev){v.addEventListener(ev,set);});})();
+  </script>
 </body>
 </html>

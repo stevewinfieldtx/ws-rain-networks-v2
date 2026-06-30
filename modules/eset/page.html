@@ -1,0 +1,222 @@
+<style>
+  .eset-mod{
+    --brand:#00a4e4; --brand-2:#6fd3ff; --brand-deep:#0a1f33; --brand-deep-2:#0d2137;
+    --ink:#16202b; --muted:#5b6472; --line:#e7ecf2; --paper:#f6f9fc;
+    font-family:'Inter',-apple-system,system-ui,Segoe UI,sans-serif; color:var(--ink); line-height:1.6; text-align:left; background:#fff;
+  }
+  .eset-mod *{margin:0; padding:0; box-sizing:border-box}
+  .eset-mod img{display:block; max-width:100%}
+  .eset-mod .wrap{max-width:1200px; margin:0 auto; padding:0 24px}
+  .eset-mod .eyebrow{display:inline-block; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--brand)}
+  .eset-mod .kicker{display:inline-block; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--brand)}
+  .eset-mod h1{font-size:clamp(34px,5vw,54px); font-weight:900; line-height:1.04; letter-spacing:-.02em; text-wrap:balance; margin:14px 0}
+  .eset-mod h2{font-size:clamp(26px,3.5vw,36px); font-weight:800; letter-spacing:-.02em; text-wrap:balance}
+  .eset-mod h3{font-size:17px; font-weight:700}
+  .eset-mod p{font-size:16px}
+  .eset-mod .grad{background:linear-gradient(120deg,var(--brand),var(--brand-2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent}
+  .eset-mod .sec{padding:clamp(56px,7vw,92px) 0}
+  .eset-mod .sec-head{max-width:640px; margin-bottom:42px}
+  .eset-mod .sec-head p{color:var(--muted); margin-top:12px}
+
+  .eset-mod .btn{display:inline-flex; align-items:center; gap:.5em; padding:15px 30px; border-radius:11px; font-weight:700; font-size:15px; text-decoration:none; border:1.5px solid transparent; transition:transform .25s, box-shadow .3s, background .25s, border-color .25s}
+  .eset-mod .btn-primary{background:var(--brand); color:#04121d; box-shadow:0 0 0 rgba(0,164,228,0)}
+  .eset-mod .btn-primary:hover{transform:translateY(-2px); box-shadow:0 12px 34px rgba(0,164,228,.45)}
+  .eset-mod .btn-ghost{background:transparent; color:#fff; border-color:rgba(255,255,255,.32)}
+  .eset-mod .btn-ghost:hover{border-color:#fff; background:rgba(255,255,255,.08); transform:translateY(-2px)}
+  .eset-mod .ctas{display:flex; flex-wrap:wrap; gap:13px}
+
+  /* hero */
+  .eset-mod .hero{position:relative; overflow:hidden; color:#fff; min-height:clamp(440px,62vh,640px); display:flex; align-items:center; padding:88px 0;
+    background-color:var(--brand-deep);
+    background-image:
+      radial-gradient(at 16% 22%, rgba(0,164,228,.45) 0%, transparent 52%),
+      radial-gradient(at 84% 12%, rgba(0,164,228,.26) 0%, transparent 46%),
+      radial-gradient(at 62% 88%, rgba(10,31,51,.92) 0%, transparent 52%)}
+  .eset-mod .hero .lead{font-size:clamp(16px,1.4vw,19px); max-width:600px; opacity:.92; margin-bottom:28px}
+  .eset-mod .hero-tags{display:flex; gap:10px; flex-wrap:wrap; margin-top:30px}
+  .eset-mod .htag{font-size:13px; font-weight:600; color:#dff4ff; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.16); border-radius:999px; padding:7px 15px}
+
+  /* trust stats */
+  .eset-mod .stats{background:var(--brand-deep-2); color:#fff}
+  .eset-mod .stat-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:20px}
+  .eset-mod .stat .n{font-size:clamp(30px,4vw,44px); font-weight:900; letter-spacing:-.02em; color:var(--brand-2)}
+  .eset-mod .stat .l{font-size:14px; opacity:.82; margin-top:6px}
+
+  /* cards */
+  .eset-mod .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
+  .eset-mod .grid-2{display:grid; grid-template-columns:repeat(2,1fr); gap:20px}
+  .eset-mod .card{background:#fff; border:1px solid var(--line); border-top:3px solid var(--brand); border-radius:16px; padding:26px; transition:transform .3s, box-shadow .3s}
+  .eset-mod .card:hover{transform:translateY(-6px); box-shadow:0 24px 50px rgba(10,31,51,.10)}
+  .eset-mod .card .ic{width:44px; height:44px; border-radius:11px; display:grid; place-items:center; background:rgba(0,164,228,.1); margin-bottom:16px}
+  .eset-mod .card .ic svg{width:24px; height:24px; stroke:var(--brand); fill:none; stroke-width:1.9; stroke-linecap:round; stroke-linejoin:round}
+  .eset-mod .card h3{margin-bottom:7px}
+  .eset-mod .card p{font-size:14.5px; color:var(--muted)}
+  .eset-mod .threats .card{border-top-color:#e2492f}
+  .eset-mod .threats .card .ic{background:rgba(226,73,47,.1)}
+  .eset-mod .threats .card .ic svg{stroke:#e2492f}
+
+  /* differentiator (dark + glass + image) */
+  .eset-mod .diff{background:var(--brand-deep); color:#fff}
+  .eset-mod .diff .split{display:grid; grid-template-columns:1fr 1fr; gap:clamp(28px,4vw,56px); align-items:center}
+  .eset-mod .diff img{border-radius:18px; border:1px solid rgba(255,255,255,.12); box-shadow:0 30px 60px rgba(0,0,0,.4); aspect-ratio:4/3; object-fit:cover; width:100%}
+  .eset-mod .glassrow{display:grid; gap:14px; margin-top:8px}
+  .eset-mod .glass{background:rgba(255,255,255,.07); backdrop-filter:blur(20px) saturate(160%); -webkit-backdrop-filter:blur(20px) saturate(160%); border:1px solid rgba(255,255,255,.12); border-radius:14px; padding:18px 20px}
+  .eset-mod .glass h3{color:#fff; margin-bottom:4px}
+  .eset-mod .glass p{font-size:14px; color:#c4d6e6}
+
+  /* pills */
+  .eset-mod .pills{display:flex; flex-wrap:wrap; gap:11px}
+  .eset-mod .pill{font-size:14px; font-weight:600; color:var(--ink); background:var(--paper); border:1px solid var(--line); border-radius:999px; padding:10px 18px}
+
+  /* bottom cta */
+  .eset-mod .cta-band{background:var(--brand-deep); color:#fff; text-align:center}
+  .eset-mod .cta-band p{max-width:560px; margin:14px auto 26px; opacity:.9}
+
+  @keyframes eset-rise{from{opacity:0; transform:translateY(40px)} to{opacity:1; transform:none}}
+  @media (prefers-reduced-motion: no-preference){
+    .eset-mod .reveal{animation:eset-rise linear both; animation-timeline:view(); animation-range:entry 0% entry 32%}
+  }
+  @media (max-width:800px){
+    .eset-mod .grid-3,.eset-mod .grid-2,.eset-mod .stat-grid,.eset-mod .diff .split{grid-template-columns:1fr}
+    .eset-mod .stat-grid{gap:28px}
+  }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<div class="eset-mod">
+
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Endpoint Protection</span>
+      <h1>Stop what other tools <span class="grad">miss</span></h1>
+      <p class="lead">Multilayered endpoint security that detects, blocks, and rolls back threats before they reach your data, with a lightweight agent that keeps machines fast.</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="#partner-contact" data-cta="hero_cta">Get your free security assessment</a>
+        <a class="btn btn-ghost" href="#capabilities" data-cta="mid_cta">See how it works</a>
+      </div>
+      <div class="hero-tags">
+        <span class="htag">Machine learning core</span>
+        <span class="htag">Ransomware rollback</span>
+        <span class="htag">Near-zero performance hit</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec stats">
+    <div class="wrap">
+      <div class="stat-grid">
+        <div class="stat reveal"><div class="n">1987</div><div class="l">Pioneering threat research</div></div>
+        <div class="stat reveal"><div class="n">200+</div><div class="l">Countries and territories</div></div>
+        <div class="stat reveal"><div class="n">110M+</div><div class="l">Users protected worldwide</div></div>
+        <div class="stat reveal"><div class="n">13</div><div class="l">Global R&amp;D centers</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec threats">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">The threat landscape</span>
+        <h2>Built for the attacks that get past the rest</h2>
+        <p>Signature-only tools miss what matters most. This is what modern endpoints are up against.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card reveal">
+          <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 2 3 6v6c0 5 3.5 8 9 10 5.5-2 9-5 9-10V6l-9-4Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+          <h3>Ransomware</h3><p>Encryption attacks that hold a business hostage in minutes.</p>
+        </div>
+        <div class="card reveal">
+          <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 2v6m0 8v6M2 12h6m8 0h6"/><circle cx="12" cy="12" r="3"/></svg></span>
+          <h3>Zero-day exploits</h3><p>Unknown vulnerabilities with no signature to match against.</p>
+        </div>
+        <div class="card reveal">
+          <span class="ic"><svg viewBox="0 0 24 24"><path d="M4 4h16v12H4z"/><path d="m4 8 8 5 8-5"/></svg></span>
+          <h3>Phishing payloads</h3><p>Weaponized attachments and links aimed straight at your users.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="capabilities">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Capabilities</span>
+        <h2>One lightweight agent, layered defense</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card reveal">
+          <span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+          <h3>Machine-learning detection</h3><p>Identifies novel malware by behavior, not just known signatures.</p>
+        </div>
+        <div class="card reveal">
+          <span class="ic"><svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.3 8 8 10 4.7-2 8-5 8-10V5l-8-3Z"/></svg></span>
+          <h3>Ransomware shield</h3><p>Watches for encryption behavior and stops it before damage spreads.</p>
+        </div>
+        <div class="card reveal">
+          <span class="ic"><svg viewBox="0 0 24 24"><path d="m13 2-9 12h7l-1 8 9-12h-7l1-8Z"/></svg></span>
+          <h3>Exploit blocker</h3><p>Hardens the apps attackers target most against memory exploits.</p>
+        </div>
+        <div class="card reveal">
+          <span class="ic"><svg viewBox="0 0 24 24"><path d="M18 10a6 6 0 0 0-12 0 4 4 0 0 0 0 8h12a4 4 0 0 0 0-8Z"/></svg></span>
+          <h3>Cloud management console</h3><p>Deploy, monitor, and respond across every endpoint from one place.</p>
+        </div>
+        <div class="card reveal">
+          <span class="ic"><svg viewBox="0 0 24 24"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg></span>
+          <h3>Low system impact</h3><p>Full protection without slowing the machines your team works on.</p>
+        </div>
+        <div class="card reveal">
+          <span class="ic"><svg viewBox="0 0 24 24"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></span>
+          <h3>Behavioral analysis</h3><p>Flags suspicious activity in real time, catching threats as they act.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec diff">
+    <div class="wrap">
+      <div class="split">
+        <img src="images/eset.jpg" alt="Endpoint security dashboard in a managed environment" class="reveal" />
+        <div>
+          <span class="kicker">The difference</span>
+          <h2>Protection that earns its place on every device</h2>
+          <div class="glassrow">
+            <div class="glass reveal"><h3>Detection without the noise</h3><p>High catch rates with famously low false positives, so your team chases real threats, not alerts.</p></div>
+            <div class="glass reveal"><h3>Light on the endpoint</h3><p>A small footprint agent that protects without dragging machines down.</p></div>
+            <div class="glass reveal"><h3>Proven over decades</h3><p>A research-led engine refined through one of the longest track records in the industry.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="grid-2">
+        <div>
+          <span class="kicker">Platform support</span>
+          <h2 style="margin:12px 0 20px">Covers the whole fleet</h2>
+          <div class="pills">
+            <span class="pill">Windows</span><span class="pill">macOS</span><span class="pill">Linux</span>
+            <span class="pill">Windows Server</span><span class="pill">Virtual environments</span><span class="pill">Android</span>
+          </div>
+        </div>
+        <div>
+          <span class="kicker">Compliance ready</span>
+          <h2 style="margin:12px 0 20px">Supports the frameworks you answer to</h2>
+          <div class="pills">
+            <span class="pill">GDPR</span><span class="pill">HIPAA</span><span class="pill">PCI DSS</span>
+            <span class="pill">ISO 27001</span><span class="pill">SOC 2</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec cta-band">
+    <div class="wrap">
+      <h2>Ready to close the gaps in your defense?</h2>
+      <p>Get a free assessment and see exactly where your endpoints stand today.</p>
+      <a class="btn btn-primary" href="#partner-contact" data-cta="bottom_cta">Talk to a security expert</a>
+    </div>
+  </section>
+
+</div>
