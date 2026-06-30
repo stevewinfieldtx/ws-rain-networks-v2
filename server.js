@@ -45,7 +45,7 @@ const TYPES = {
   '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.png': 'image/png',
   '.webp': 'image/webp', '.gif': 'image/gif', '.svg': 'image/svg+xml',
   '.ico': 'image/x-icon', '.mp4': 'video/mp4', '.webm': 'video/webm',
-  '.txt': 'text/plain; charset=utf-8',
+  '.txt': 'text/plain; charset=utf-8', '.xml': 'application/xml; charset=utf-8',
   '.woff': 'font/woff', '.woff2': 'font/woff2', '.ttf': 'font/ttf',
 };
 

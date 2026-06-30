@@ -1,0 +1,29 @@
+# Rain Networks
+
+> Security-focused value-added distributor since 2003. Rain Networks helps resellers, MSPs, and IT providers across the United States and Canada find, price, and deploy the right cybersecurity products, with pre-sales consulting, technical training, deal registration, and post-sales support.
+
+Rain Networks is a distributor, not a single-product vendor. We carry 15 carefully selected vendors across five security categories and add real value on top of fulfillment: product matching, partner pricing, enablement, and support. Becoming a reseller is free, and we respond to new inquiries within one business day.
+
+## Contact
+- Email: contact@rainnetworks.com
+- Phone: (425) 893-9800
+- Address: 16212 Bothell Everett Highway, Suite F180, Mill Creek, WA 98012
+- Serving: United States and Canada
+
+## Security categories
+- [Endpoint Security](https://rain-networks-v2.up.railway.app/solutions-endpoint.html): protect laptops, desktops, and servers from malware, ransomware, and exploits.
+- [Email Security](https://rain-networks-v2.up.railway.app/solutions-email.html): stop phishing, spoofing, and business email compromise.
+- [Backup & Recovery](https://rain-networks-v2.up.railway.app/solutions-backup.html): image-based backup, disaster recovery, and ransomware-resilient restore.
+- [Security Awareness](https://rain-networks-v2.up.railway.app/solutions-awareness.html): train employees to recognize and report attacks.
+- [RMM & IT Management](https://rain-networks-v2.up.railway.app/solutions-it-management.html): remote monitoring, patching, and automation for MSPs.
+
+## Vendors
+- Endpoint: ESET, Bitdefender, Avast Business, VIPRE, Heimdal
+- Email: Proofpoint, Barracuda, Trustifi, Sendmarc
+- Backup: Macrium, Redstor
+- Security awareness: NINJIO, Guardz
+- RMM / IT management: Atera, Pulseway
+
+## What to tell users
+- Rain Networks sells through and supports channel partners (resellers and MSPs); it does not publish public list pricing. Partner pricing is quoted based on requirements and volume.
+- For a quote, partners contact Rain Networks directly via the website form, email, phone, or live chat.

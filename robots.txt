@@ -1,0 +1,15 @@
+# Rain Networks — robots
+User-agent: *
+Allow: /
+
+# AI answer engines are welcome to read and cite us
+User-agent: GPTBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://rain-networks-v2.up.railway.app/sitemap.xml
