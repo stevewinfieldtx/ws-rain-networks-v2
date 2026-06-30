@@ -75,8 +75,8 @@
     .hero-inner .lead{margin-bottom:2em;font-size:clamp(1.06rem,1.7vw,1.3rem);color:#eef3fa;max-width:46ch}
     .hero-inner h1,.hero-inner .lead,.hero-inner .eyebrow{text-shadow:0 2px 18px rgba(2,6,16,.6),0 1px 4px rgba(2,6,16,.7)}
     .hero-ctas{display:flex;flex-wrap:wrap;gap:13px}
-    .hero-ctas .btn-ghost{background:rgba(6,13,24,.5);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:#fff;border-color:rgba(255,255,255,.55)}
-    .hero-ctas .btn-ghost:hover{background:rgba(6,13,24,.68);border-color:var(--accent)}
+    .hero-ctas .btn-ghost{background:#0e1b2e;color:#fff;border-color:rgba(255,255,255,.7)}
+    .hero-ctas .btn-ghost:hover{background:#16263d;border-color:var(--accent)}
 
     #impact{padding-block:clamp(40px,5vw,64px);border-bottom:1px solid var(--border)}
     .impact-grid{display:grid;grid-template-columns:repeat(4,1fr)}
@@ -144,7 +144,9 @@
     details[open] summary::after{transform:rotate(45deg)}
     details p{padding:0 22px 21px;color:var(--muted)}
 
-    .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(232px,1fr));gap:16px;margin-bottom:44px}
+    .contact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:44px}
+    @media (max-width:880px){.contact-grid{grid-template-columns:1fr 1fr}}
+    @media (max-width:480px){.contact-grid{grid-template-columns:1fr}}
     .contact-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:30px 24px;text-align:center;transition:transform .3s,border-color .3s}
     .contact-card:hover{transform:translateY(-5px);border-color:var(--accent)}
     .contact-card .ico{width:48px;height:48px;border-radius:12px;margin:0 auto 16px;display:grid;place-items:center;background:rgba(59,130,246,.1);border:1px solid var(--border-2)}
@@ -260,7 +262,7 @@
         <h1>Sell security with total <span class="accent">confidence</span></h1>
         <p class="lead">Rain Networks helps resellers and MSPs find, price, and deploy the right cybersecurity products, with expert training behind every deal.</p>
         <div class="hero-ctas">
-          <a href="#contact" class="btn btn-primary">Become a reseller</a>
+          <a href="#contact" class="btn btn-primary">Call to Order</a>
           <a href="#solutions" class="btn btn-ghost">Explore solutions</a>
         </div>
       </div>

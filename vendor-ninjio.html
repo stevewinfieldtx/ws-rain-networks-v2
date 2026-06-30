@@ -215,6 +215,12 @@
       .nav-dd-menu{position:static;display:grid;grid-template-columns:1fr;background:none;border:0;box-shadow:none;padding:4px 0 8px 14px;backdrop-filter:none}
       .nav-dd>.nav-dd-toggle::after{display:none}
     }
+      /* vendor media (videos + screenshot) */
+    #media .media-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px}
+    #media .video-wrapper{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:14px;border:1px solid var(--border)}
+    #media .video-wrapper iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    #media .media-shot img{width:100%;border-radius:14px;border:1px solid var(--border);box-shadow:var(--shadow)}
+    @media (max-width:760px){#media .media-grid{grid-template-columns:1fr}}
   </style>
   <style>
     .page-hero{padding:118px 24px 56px;position:relative;overflow:hidden;border-bottom:1px solid var(--border)}
@@ -312,7 +318,7 @@
         <li><a href="index.html#contact">Contact</a></li>
       </ul>
       <label for="nav-toggle" class="nav-burger" aria-label="Toggle menu"><span></span><span></span><span></span></label>
-      <a href="index.html#contact" class="btn-nav">Become a reseller</a>
+      <a href="index.html#contact" class="btn-nav">Call to Order</a>
     </nav>
   </header>
 
@@ -327,7 +333,7 @@
           <p class="vtag">Engage. Educate. Empower.</p>
           <p class="lead">Engaging security awareness training that teaches employees to recognize and avoid cyber threats through storytelling.</p>
           <div class="hero-ctas">
-            <a href="index.html#contact" class="btn btn-primary">Become a reseller</a>
+            <a href="index.html#contact" class="btn btn-primary">Call to Order</a>
             <a href="https://www.ninjio.com" class="btn btn-ghost" target="_blank" rel="noopener">Visit official site →</a>
           </div>
           <div class="vmeta">
@@ -403,6 +409,17 @@
       </div>
     </section>
 
+    <section id="media" class="vsec alt">
+      <div class="wrap">
+        <div class="sec-head"><h2>NINJIO in action</h2></div>
+        <div class="media-grid">
+          <div class="video-wrapper"><iframe data-cms-embed src="https://www.youtube.com/embed/RbjzTPuNunk" title="NINJIO video" frameborder="0" allowfullscreen loading="lazy"></iframe></div>
+          <div class="video-wrapper"><iframe data-cms-embed src="https://www.youtube.com/embed/CGPjoAwtI14" title="NINJIO video" frameborder="0" allowfullscreen loading="lazy"></iframe></div>
+        </div>
+        <div class="media-shot reveal"><img src="https://images.squarespace-cdn.com/content/v1/640dd2ad47fe32613a472b9c/90f31ab7-4a6b-4ce4-8919-a4dda0795c96/NINJIO+Request+Demo.png" alt="NINJIO product screenshot" /></div>
+      </div>
+    </section>
+
     <section id="contact" class="vsec">
       <div class="wrap">
         <div class="sell">
@@ -413,7 +430,7 @@
             <div class="sell-pt"><svg viewBox="0 0 24 24" fill="none"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1 2.7 3 6 3s6-2 6-3v-5"/></svg><div><b>Technical training</b><span>Hands-on enablement so you deploy with confidence.</span></div></div>
             <div class="sell-pt"><svg viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg><div><b>Deal registration</b><span>Register opportunities and protect your margins.</span></div></div>
           </div>
-          <a href="index.html#contact" class="btn btn-primary">Become a reseller</a>
+          <a href="index.html#contact" class="btn btn-primary">Call to Order</a>
         </div>
       </div>
     </section>
