@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rain Networks, Value-Added Cybersecurity Distribution</title>
+  <meta name="description" content="Rain Networks is a security-focused value-added distributor since 2003. We help resellers and MSPs find, price, and deploy the best cybersecurity products across North America." />
+  <link rel="icon" type="image/jpeg" href="Rain.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Rain Networks" />
+  <meta property="og:title" content="Rain Networks, Value-Added Cybersecurity Distribution" />
+  <meta property="og:description" content="Security-first distribution for resellers and MSPs. Find the right products, get trained, win more deals." />
+  <meta property="og:image" content="hero_city_storm.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Rain Networks, Value-Added Cybersecurity Distribution" />
+  <meta name="twitter:description" content="Security-first distribution for resellers and MSPs. Find the right products, get trained, win more deals." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --bg:#060d18; --surface:#0b1322; --surface-2:#0f1b2e;
+      --border:#1b2740; --border-2:#2a3a57;
+      --text:#e8eef6; --muted:#93a4ba; --faint:#5f7188;
+      --accent:#3b82f6; --accent-text:#6ea2ff; --accent-strong:#2563eb;
+      --radius:14px; --radius-lg:22px; --maxw:1220px;
+      --shadow:0 20px 50px rgba(2,6,16,.55);
+      --font:'Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+      --display:'Space Grotesk','Manrope',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;scroll-padding-top:80px}
+    body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    body::before{content:"";position:fixed;inset:0;z-index:-2;background:
+      radial-gradient(110% 60% at 50% -10%, rgba(37,99,235,.16) 0%, transparent 55%),
+      var(--bg)}
+    img{display:block;max-width:100%}
+    a{color:inherit;text-decoration:none}
+    h1,h2,h3,h4{font-family:var(--display);line-height:1.08;letter-spacing:-.02em;font-weight:600}
+    section{padding:clamp(60px,8vw,116px) 24px;position:relative}
+    .wrap{max-width:var(--maxw);margin:0 auto}
+    .accent{color:var(--accent-text)}
+    .eyebrow{display:inline-block;font-size:.74rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-text);font-family:var(--font)}
+    .lead{color:var(--muted);font-size:clamp(1.02rem,1.4vw,1.16rem);max-width:60ch}
+    .center{text-align:center;margin-inline:auto}
+    .ico svg{width:26px;height:26px;stroke:var(--accent-text);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+
+    .btn{display:inline-flex;align-items:center;gap:.5em;font-weight:600;font-size:.98rem;padding:.82em 1.55em;border-radius:10px;border:1px solid transparent;cursor:pointer;transition:transform .2s ease,background .2s ease,border-color .2s ease}
+    .btn-primary{background:var(--accent-strong);color:#fff}
+    .btn-primary:hover{background:#1e54cf;transform:translateY(-2px)}
+    .btn-primary:active{transform:translateY(0)}
+    .btn-ghost{background:transparent;color:var(--text);border-color:var(--border-2)}
+    .btn-ghost:hover{border-color:var(--accent);background:rgba(59,130,246,.08);transform:translateY(-2px)}
+
+    header{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px) saturate(150%);background:rgba(6,13,24,.78);border-bottom:1px solid var(--border)}
+    nav{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;gap:18px;padding:13px 24px;height:64px}
+    .logo-link{display:flex;align-items:center;gap:10px;margin-right:auto}
+    .logo-img{width:34px;height:34px;border-radius:8px;object-fit:cover;box-shadow:0 0 0 1px var(--border-2)}
+    .logo-text{font-family:var(--display);font-weight:600;font-size:1.1rem;letter-spacing:-.01em}
+    .nav-links{display:flex;align-items:center;gap:4px;list-style:none}
+    .nav-links a{padding:8px 13px;border-radius:8px;font-weight:500;font-size:.94rem;color:var(--muted);transition:color .2s,background .2s}
+    .nav-links a:hover{color:var(--text);background:rgba(255,255,255,.05)}
+    .btn-nav{background:var(--accent-strong);color:#fff;padding:9px 16px;border-radius:9px;font-weight:600;font-size:.9rem;transition:background .2s,transform .2s}
+    .btn-nav:hover{background:#1e54cf;transform:translateY(-1px)}
+    .nav-toggle,.nav-burger{display:none}
+    .nav-burger{flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+    .nav-burger span{display:block;width:23px;height:2px;background:var(--text);border-radius:2px;transition:.3s}
+
+    #hero{padding:0;min-height:88vh;display:flex;align-items:center;overflow:hidden}
+    .hero-media{position:absolute;inset:0;z-index:0}
+    .hero-bg{width:100%;height:100%;object-fit:cover}
+    .hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,13,24,.62) 0%,rgba(6,13,24,.8) 58%,rgba(6,13,24,.97) 100%)}
+    .hero-inner{position:relative;z-index:1;max-width:var(--maxw);margin:0 auto;padding:96px 24px;width:100%}
+    .hero-inner h1{font-size:clamp(2.6rem,6vw,4.7rem);font-weight:700;max-width:15ch;margin:.34em 0 .42em}
+    .hero-inner .lead{margin-bottom:2em;font-size:clamp(1.06rem,1.7vw,1.3rem);color:#c6d2e2;max-width:46ch}
+    .hero-ctas{display:flex;flex-wrap:wrap;gap:13px}
+
+    #impact{padding-block:clamp(40px,5vw,64px);border-bottom:1px solid var(--border)}
+    .impact-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+    .stat{padding:8px 26px;border-left:1px solid var(--border)}
+    .stat:first-child{border-left:0;padding-left:0}
+    .stat .n{display:block;font-family:var(--display);font-size:clamp(1.7rem,3vw,2.4rem);font-weight:600;color:#fff;letter-spacing:-.02em}
+    .stat .l{display:block;font-size:.9rem;color:var(--muted);margin-top:4px}
+
+    .sec-head{max-width:680px;margin-bottom:48px}
+    .sec-head h2{font-size:clamp(1.9rem,3.6vw,2.8rem);font-weight:600;margin:.34em 0 .4em}
+    .sec-head.center{margin-inline:auto}
+
+    .sol-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+    .sol-card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:transform .3s ease,border-color .3s ease}
+    .sol-card:hover{transform:translateY(-6px);border-color:var(--accent)}
+    .sol-card .thumb{aspect-ratio:16/10;overflow:hidden}
+    .sol-card .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+    .sol-card:hover .thumb img{transform:scale(1.05)}
+    .sol-body{padding:22px;display:flex;flex-direction:column;flex:1}
+    .sol-body h3{font-size:1.24rem;margin-bottom:.45em}
+    .sol-body p{color:var(--muted);font-size:.95rem;margin-bottom:1.1em}
+    .feat-list{list-style:none;display:grid;gap:9px;margin-top:auto}
+    .feat-list li{padding-left:26px;position:relative;font-size:.9rem;color:var(--text)}
+    .feat-list li svg{position:absolute;left:0;top:3px;width:16px;height:16px;stroke:var(--accent-text);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+    .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 56px}
+    .why-item{display:flex;gap:18px;padding:26px 0;border-top:1px solid var(--border)}
+    .why-item .ico{flex:0 0 auto;width:46px;height:46px;border-radius:11px;display:grid;place-items:center;background:rgba(59,130,246,.1);border:1px solid var(--border-2)}
+    .why-item h3{font-size:1.12rem;margin-bottom:.35em;font-family:var(--display);font-weight:600}
+    .why-item p{color:var(--muted);font-size:.94rem}
+
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+    .step{padding:0 34px;border-left:1px solid var(--border)}
+    .step:first-child{border-left:0;padding-left:0}
+    .step .k{font-family:var(--display);font-size:1rem;font-weight:600;color:var(--accent-text)}
+    .step h3{font-size:1.45rem;margin:.5em 0 .4em;font-weight:600}
+    .step p{color:var(--muted);font-size:.96rem}
+
+    .vcard-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
+    .vendor-card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:transform .3s,border-color .3s}
+    .vendor-card:hover{transform:translateY(-6px);border-color:var(--accent)}
+    .vendor-card .v-img{aspect-ratio:16/10;object-fit:cover;width:100%}
+    .v-body{padding:22px;display:flex;flex-direction:column;flex:1}
+    .v-cat{font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-text);font-family:var(--font)}
+    .v-body h3{font-size:1.28rem;font-weight:600;margin:.4em 0 .1em}
+    .v-tag{color:var(--text);font-weight:500;font-size:.94rem;margin-bottom:.5em}
+    .v-desc{color:var(--muted);font-size:.9rem;margin-bottom:1.1em}
+    .v-foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:13px;border-top:1px solid var(--border)}
+    .v-rating{font-size:.9rem;font-weight:600;color:var(--text);display:inline-flex;align-items:center;gap:5px}
+    .v-rating svg{width:15px;height:15px;fill:var(--accent-text)}
+    .v-link{color:var(--accent-text);font-weight:600;font-size:.9rem}
+
+    .pull{max-width:900px;margin:0 auto;text-align:center}
+    .pull blockquote{font-family:var(--display);font-size:clamp(1.5rem,3.4vw,2.4rem);font-weight:500;line-height:1.32;letter-spacing:-.015em;color:#eef3fa}
+    .pull blockquote .accent{font-weight:600}
+    .pull-by{margin-top:24px;color:var(--muted);font-weight:500;font-size:.98rem}
+
+    .faq-list{max-width:800px;margin:0 auto;display:grid;gap:10px}
+    details{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:border-color .3s}
+    details[open]{border-color:var(--border-2)}
+    summary{padding:19px 22px;font-weight:600;font-size:1.04rem;font-family:var(--display);cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:center}
+    summary::-webkit-details-marker{display:none}
+    summary::after{content:"+";font-size:1.45rem;font-weight:400;color:var(--accent-text);transition:transform .3s}
+    details[open] summary::after{transform:rotate(45deg)}
+    details p{padding:0 22px 21px;color:var(--muted)}
+
+    .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(232px,1fr));gap:16px;margin-bottom:44px}
+    .contact-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:30px 24px;text-align:center;transition:transform .3s,border-color .3s}
+    .contact-card:hover{transform:translateY(-5px);border-color:var(--accent)}
+    .contact-card .ico{width:48px;height:48px;border-radius:12px;margin:0 auto 16px;display:grid;place-items:center;background:rgba(59,130,246,.1);border:1px solid var(--border-2)}
+    .contact-card h3{font-size:1.08rem;font-weight:600;margin-bottom:.5em}
+    .contact-card a,.contact-card p{color:var(--muted);font-size:.94rem;display:block}
+    .contact-card a:hover{color:var(--accent-text)}
+
+    .cta-band{background:var(--surface);border:1px solid var(--border-2);border-radius:var(--radius-lg);padding:clamp(40px,6vw,72px);text-align:center}
+    .cta-band h2{font-size:clamp(1.9rem,3.6vw,2.7rem);font-weight:600;margin-bottom:.4em}
+    .cta-band .lead{margin:0 auto 1.7em}
+
+    footer{border-top:1px solid var(--border);padding:60px 24px 36px;background:rgba(6,13,24,.6)}
+    .foot-grid{max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:40px}
+    .foot-brand{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+    .foot-brand img{width:32px;height:32px;border-radius:8px;object-fit:cover}
+    .foot-brand .logo-text{font-size:1.05rem}
+    .foot-tag{color:var(--muted);font-size:.93rem;max-width:34ch}
+    .foot-contact{margin-top:18px;display:grid;gap:6px}
+    .foot-contact a,.foot-contact p{color:var(--muted);font-size:.91rem}
+    .foot-contact a:hover{color:var(--accent-text)}
+    .foot-col h4{font-family:var(--font);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-bottom:15px;font-weight:600}
+    .foot-col ul{list-style:none;display:grid;gap:10px}
+    .foot-col a{color:var(--muted);font-size:.92rem}
+    .foot-col a:hover{color:var(--accent-text)}
+    .foot-bottom{max-width:var(--maxw);margin:38px auto 0;padding-top:22px;border-top:1px solid var(--border);display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}
+    .foot-bottom p{color:var(--faint);font-size:.85rem}
+    .social{display:flex;gap:9px}
+    .social a{width:36px;height:36px;border-radius:9px;border:1px solid var(--border);display:grid;place-items:center;color:var(--muted);transition:.22s}
+    .social a svg{width:17px;height:17px;fill:currentColor}
+    .social a:hover{color:#fff;border-color:var(--accent);background:rgba(37,99,235,.16)}
+
+    @keyframes reveal{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+    @media (prefers-reduced-motion:no-preference){
+      .reveal{animation:reveal linear both;animation-timeline:view();animation-range:entry 0% entry 24%}
+    }
+
+    @media (max-width:900px){
+      .why-grid{grid-template-columns:1fr}
+      .steps{grid-template-columns:1fr}
+      .step{border-left:0;padding:0;border-top:1px solid var(--border);padding-top:26px;margin-top:26px}
+      .step:first-child{border-top:0;margin-top:0;padding-top:0}
+    }
+    @media (max-width:860px){
+      .nav-links{position:fixed;inset:64px 0 auto 0;flex-direction:column;align-items:stretch;gap:0;background:rgba(6,13,24,.98);border-bottom:1px solid var(--border);padding:10px 16px 18px;transform:translateY(-130%);transition:transform .32s ease;backdrop-filter:blur(18px)}
+      .nav-links a{padding:14px;border-radius:10px}
+      .nav-toggle:checked ~ .nav-links{transform:translateY(0)}
+      .nav-burger{display:flex}
+      .nav-toggle:checked ~ .nav-burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+      .nav-toggle:checked ~ .nav-burger span:nth-child(2){opacity:0}
+      .nav-toggle:checked ~ .nav-burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+      .btn-nav{display:none}
+      .impact-grid{grid-template-columns:1fr 1fr;gap:24px 0}
+      .stat{padding:8px 22px}
+      .stat:nth-child(odd){border-left:0;padding-left:0}
+      .foot-grid{grid-template-columns:1fr;gap:30px}
+    }
+    @media (max-width:480px){.hero-ctas .btn{width:100%;justify-content:center}}
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="#hero" class="logo-link">
+        <img src="Rain.jpg" alt="Rain Networks logo" class="logo-img" />
+        <span class="logo-text">Rain Networks</span>
+      </a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+      <ul class="nav-links">
+        <li><a href="#solutions">Solutions</a></li>
+        <li><a href="#why-rain">Why us</a></li>
+        <li><a href="#vendors">Vendors</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <label for="nav-toggle" class="nav-burger" aria-label="Toggle menu"><span></span><span></span><span></span></label>
+      <a href="#contact" class="btn-nav">Become a reseller</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section id="hero">
+      <div class="hero-media">
+        <video class="hero-bg" autoplay muted loop playsinline poster="hero_city_storm.jpg">
+          <source src="RainNetworksVideo.mp4" type="video/mp4" />
+        </video>
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="hero-inner">
+        <span class="eyebrow">Value-added cybersecurity distribution since 2003</span>
+        <h1>Sell security with total <span class="accent">confidence</span></h1>
+        <p class="lead">Rain Networks helps resellers and MSPs find, price, and deploy the right cybersecurity products, with expert training behind every deal.</p>
+        <div class="hero-ctas">
+          <a href="#contact" class="btn btn-primary">Become a reseller</a>
+          <a href="#solutions" class="btn btn-ghost">Explore solutions</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="impact">
+      <div class="wrap">
+        <div class="impact-grid">
+          <div class="stat"><span class="n">3,500+</span><span class="l">reseller partners</span></div>
+          <div class="stat"><span class="n">50 states</span><span class="l">plus every Canadian province</span></div>
+          <div class="stat"><span class="n">20+ years</span><span class="l">of channel expertise</span></div>
+          <div class="stat"><span class="n">15 vendors</span><span class="l">across 5 security categories</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="solutions">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="eyebrow">What we cover</span>
+          <h2>Five categories, one trusted distributor</h2>
+          <p class="lead">Every product we carry is vetted for the channel. We match you to the right fit and stand behind it with pre-sales and post-sales support.</p>
+        </div>
+        <div class="sol-grid">
+          <div class="sol-card reveal">
+            <div class="thumb"><img src="server_room_blue.jpg" alt="Endpoint security illustration" /></div>
+            <div class="sol-body">
+              <h3>Endpoint Security</h3>
+              <p>Protect desktops, laptops, and servers with layered, lightweight defense against malware and ransomware.</p>
+              <ul class="feat-list">
+                <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"/></svg>Machine-learning threat detection</li>
+                <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"/></svg>Low system impact</li>
+                <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"/></svg>Centralized cloud management</li>
+              </ul>
+            </div>
+          </div>
+          <div class="sol-card reveal">
+            <div class="thumb"><img src="rain_on_glass.jpg" alt="Email security illustration" /></div>
+            <div class="sol-body">
+              <h3>Email Security</h3>
+              <p>Stop phishing, business email compromise, and data loss before it reaches the inbox.</p>
+              <ul class="feat-list">
+                <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"/></svg>URL defense and sandboxing</li>
+                <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"/></svg>DMARC authentication</li>
+                <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"/></svg>Data loss prevention</li>
+              </ul>
+            </div>
+          </div>
+          <div class="sol-card reveal">
+            <div class="thumb"><img src="container_logistics.jpg" alt="Backup and recovery illustration" /></div>
+            <div class="sol-body">
+              <h3>Backup &amp; Recovery</h3>
+              <p>Keep clients running with fast disk imaging, cloud backup, and rapid recovery from any disruption.</p>
+              <ul class="feat-list">
+                <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"/></svg>Fast disk imaging</li>
+                <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"/></svg>Bare-metal recovery</li>
+                <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"/></svg>Ransomware-resilient storage</li>
+              </ul>
+            </div>
+          </div>
+          <div class="sol-card reveal">
+            <div class="thumb"><img src="workspace_monitors.jpg" alt="Security awareness training illustration" /></div>
+            <div class="sol-body">
+              <h3>Security Awareness</h3>
+              <p>Turn employees into a first line of defense with engaging, story-driven training.</p>
+              <ul class="feat-list">
+                <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"/></svg>Story-driven episodes</li>
+                <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"/></svg>Phishing simulations</li>
+                <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"/></svg>Compliance reporting</li>
+              </ul>
+            </div>
+          </div>
+          <div class="sol-card reveal">
+            <div class="thumb"><img src="city_intersection_night.jpg" alt="RMM and IT management illustration" /></div>
+            <div class="sol-body">
+              <h3>RMM &amp; IT Management</h3>
+              <p>Streamline operations with unified remote monitoring, automation, and helpdesk tools for modern MSPs.</p>
+              <ul class="feat-list">
+                <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"/></svg>Remote monitoring and management</li>
+                <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"/></svg>Automation and patching</li>
+                <li><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"/></svg>Integrated helpdesk and PSA</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="why-rain">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <h2>Distribution that adds real value</h2>
+          <p class="lead">We are not just fulfillment. Every partnership comes with consulting, training, and protection that helps you close more business at better margins.</p>
+        </div>
+        <div class="why-grid">
+          <div class="why-item reveal">
+            <span class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>
+            <div><h3>Vendor matching</h3><p>We learn your clients and requirements, then match you to the products that actually fit, not the ones with the biggest spiff.</p></div>
+          </div>
+          <div class="why-item reveal">
+            <span class="ico"><svg viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1 2.7 3 6 3s6-2 6-3v-5"/></svg></span>
+            <div><h3>Technical training</h3><p>Hands-on enablement so your team can deploy, configure, and support every solution with confidence.</p></div>
+          </div>
+          <div class="why-item reveal">
+            <span class="ico"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+            <div><h3>Deal registration</h3><p>Register your opportunities and protect your margins. We help you win the deal and keep it.</p></div>
+          </div>
+          <div class="why-item reveal">
+            <span class="ico"><svg viewBox="0 0 24 24"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L2 12V2h10l8.6 8.6a2 2 0 0 1 0 2.8Z"/><circle cx="7" cy="7" r="1.2"/></svg></span>
+            <div><h3>Competitive pricing</h3><p>Partner pricing tuned to your requirements and volume, so you stay sharp against the competition.</p></div>
+          </div>
+          <div class="why-item reveal">
+            <span class="ico"><svg viewBox="0 0 24 24"><path d="m3 11 18-5v12L3 14v-3Z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></span>
+            <div><h3>Marketing resources</h3><p>Co-branded campaigns, collateral, and enablement assets that help you take products to market faster.</p></div>
+          </div>
+          <div class="why-item reveal">
+            <span class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><path d="m4.9 4.9 4.3 4.3M14.8 14.8l4.3 4.3M14.8 9.2l4.3-4.3M9.2 14.8l-4.3 4.3"/></svg></span>
+            <div><h3>Post-sales support</h3><p>Real people who pick up the phone. We stay with you long after the purchase order is signed.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="wrap">
+        <div class="sec-head reveal"><h2>From first call to closed deal</h2></div>
+        <div class="steps">
+          <div class="step reveal">
+            <span class="k">Match</span>
+            <h3>Tell us your goals</h3>
+            <p>Share your clients and requirements. We recommend the right vendors and walk you through the differences.</p>
+          </div>
+          <div class="step reveal">
+            <span class="k">Enable</span>
+            <h3>Price and train</h3>
+            <p>Get partner pricing, register the deal, and train your team with our pre-sales and technical experts.</p>
+          </div>
+          <div class="step reveal">
+            <span class="k">Grow</span>
+            <h3>Deploy and scale</h3>
+            <p>Deploy with confidence and lean on ongoing support, renewals, and new opportunities as you grow.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="vendors">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <span class="eyebrow">Our portfolio</span>
+          <h2>15 vendors the channel trusts</h2>
+          <p class="lead">Each brand we carry earns its place through real protection and real channel value, across every major category of business security.</p>
+        </div>
+        <div class="vcard-grid">
+          <article class="vendor-card reveal">
+            <img class="v-img" src="ai_eset.jpg" alt="ESET Endpoint Security" />
+            <div class="v-body">
+              <span class="v-cat">Endpoint Security</span>
+              <h3>ESET</h3>
+              <p class="v-tag">Lightweight. Powerful. Trusted.</p>
+              <p class="v-desc">Multi-layered endpoint protection with advanced machine learning, exploit prevention, and ransomware shield.</p>
+              <div class="v-foot">
+                <span class="v-rating"><svg viewBox="0 0 24 24"><path d="m12 2 3 6.9 7.6.6-5.8 5 1.8 7.4L12 18l-6.4 3.9 1.8-7.4-5.8-5 7.6-.6z"/></svg>4.6</span>
+                <a href="https://www.eset.com" class="v-link">Visit website →</a>
+              </div>
+            </div>
+          </article>
+          <article class="vendor-card reveal">
+            <img class="v-img" src="ai_bitdefender.jpg" alt="Bitdefender Endpoint Security" />
+            <div class="v-body">
+              <span class="v-cat">Endpoint Security</span>
+              <h3>Bitdefender</h3>
+              <p class="v-tag">Unified. Intelligent. Secure.</p>
+              <p class="v-desc">Unified endpoint protection with advanced threat defense, risk analytics, and patch management in a single platform.</p>
+              <div class="v-foot">
+                <span class="v-rating"><svg viewBox="0 0 24 24"><path d="m12 2 3 6.9 7.6.6-5.8 5 1.8 7.4L12 18l-6.4 3.9 1.8-7.4-5.8-5 7.6-.6z"/></svg>4.6</span>
+                <a href="https://www.bitdefender.com" class="v-link">Visit website →</a>
+              </div>
+            </div>
+          </article>
+          <article class="vendor-card reveal">
+            <img class="v-img" src="ai_heimdal.jpg" alt="Heimdal Endpoint Security" />
+            <div class="v-body">
+              <span class="v-cat">Endpoint Security</span>
+              <h3>Heimdal</h3>
+              <p class="v-tag">One Platform. Total Security.</p>
+              <p class="v-desc">Unified XDR platform delivering advanced threat detection and response across endpoints, networks, email, and identities.</p>
+              <div class="v-foot">
+                <span class="v-rating"><svg viewBox="0 0 24 24"><path d="m12 2 3 6.9 7.6.6-5.8 5 1.8 7.4L12 18l-6.4 3.9 1.8-7.4-5.8-5 7.6-.6z"/></svg>4.6</span>
+                <a href="https://heimdalsecurity.com" class="v-link">Visit website →</a>
+              </div>
+            </div>
+          </article>
+          <article class="vendor-card reveal">
+            <img class="v-img" src="ai_guardz.jpg" alt="Guardz Endpoint Security" />
+            <div class="v-body">
+              <span class="v-cat">Endpoint Security</span>
+              <h3>Guardz</h3>
+              <p class="v-tag">Security Simplified. Business Amplified.</p>
+              <p class="v-desc">Unified, AI-powered cybersecurity built for MSPs and SMBs covering endpoints, email, identity, and cloud in a single platform.</p>
+              <div class="v-foot">
+                <span class="v-rating"><svg viewBox="0 0 24 24"><path d="m12 2 3 6.9 7.6.6-5.8 5 1.8 7.4L12 18l-6.4 3.9 1.8-7.4-5.8-5 7.6-.6z"/></svg>4.6</span>
+                <a href="https://guardz.com" class="v-link">Visit website →</a>
+              </div>
+            </div>
+          </article>
+          <article class="vendor-card reveal">
+            <img class="v-img" src="ai_vipre.jpg" alt="VIPRE Endpoint Security" />
+            <div class="v-body">
+              <span class="v-cat">Endpoint Security</span>
+              <h3>VIPRE</h3>
+              <p class="v-tag">Simple. Effective. Affordable.</p>
+              <p class="v-desc">Simple, effective endpoint protection designed for small and medium businesses with easy management.</p>
+              <div class="v-foot">
+                <span class="v-rating"><svg viewBox="0 0 24 24"><path d="m12 2 3 6.9 7.6.6-5.8 5 1.8 7.4L12 18l-6.4 3.9 1.8-7.4-5.8-5 7.6-.6z"/></svg>4.1</span>
+                <a href="https://www.vipre.com" class="v-link">Visit website →</a>
+              </div>
+            </div>
+          </article>
+          <article class="vendor-card reveal">
+            <img class="v-img" src="ai_avast.jpg" alt="Avast Business Endpoint Security" />
+            <div class="v-body">
+              <span class="v-cat">Endpoint Security</span>
+              <h3>Avast Business</h3>
+              <p class="v-tag">Trusted. Reliable. Business-Ready.</p>
+              <p class="v-desc">Business-grade antivirus and endpoint protection with centralized management and threat detection.</p>
+              <div class="v-foot">
+                <span class="v-rating"><svg viewBox="0 0 24 24"><path d="m12 2 3 6.9 7.6.6-5.8 5 1.8 7.4L12 18l-6.4 3.9 1.8-7.4-5.8-5 7.6-.6z"/></svg>4</span>
+                <a href="https://www.avast.com/business" class="v-link">Visit website →</a>
+              </div>
+            </div>
+          </article>
+          <article class="vendor-card reveal">
+            <img class="v-img" src="ai_proofpoint.jpg" alt="Proofpoint Email Security" />
+            <div class="v-body">
+              <span class="v-cat">Email Security</span>
+              <h3>Proofpoint</h3>
+              <p class="v-tag">Protect People. Defend Data.</p>
+              <p class="v-desc">Advanced email security that protects against phishing, malware, and credential theft through URL defense and attachment sandboxing.</p>
+              <div class="v-foot">
+                <span class="v-rating"><svg viewBox="0 0 24 24"><path d="m12 2 3 6.9 7.6.6-5.8 5 1.8 7.4L12 18l-6.4 3.9 1.8-7.4-5.8-5 7.6-.6z"/></svg>4.7</span>
+                <a href="https://www.proofpoint.com" class="v-link">Visit website →</a>
+              </div>
+            </div>
+          </article>
+          <article class="vendor-card reveal">
+            <img class="v-img" src="ai_barracuda.jpg" alt="Barracuda Email Security" />
+            <div class="v-body">
+              <span class="v-cat">Email Security</span>
+              <h3>Barracuda</h3>
+              <p class="v-tag">Comprehensive. Reliable. Protected.</p>
+              <p class="v-desc">Comprehensive email security with spam filtering, malware protection, and data loss prevention.</p>
+              <div class="v-foot">
+                <span class="v-rating"><svg viewBox="0 0 24 24"><path d="m12 2 3 6.9 7.6.6-5.8 5 1.8 7.4L12 18l-6.4 3.9 1.8-7.4-5.8-5 7.6-.6z"/></svg>4.4</span>
+                <a href="https://www.barracuda.com" class="v-link">Visit website →</a>
+              </div>
+            </div>
+          </article>
+          <article class="vendor-card reveal">
+            <img class="v-img" src="ai_trustifi.jpg" alt="Trustifi Email Security" />
+            <div class="v-body">
+              <span class="v-cat">Email Security</span>
+              <h3>Trustifi</h3>
+              <p class="v-tag">Simple. Secure. Compliant.</p>
+              <p class="v-desc">Easy-to-use email encryption and security solution with one-click protection and compliance features.</p>
+              <div class="v-foot">
+                <span class="v-rating"><svg viewBox="0 0 24 24"><path d="m12 2 3 6.9 7.6.6-5.8 5 1.8 7.4L12 18l-6.4 3.9 1.8-7.4-5.8-5 7.6-.6z"/></svg>4.3</span>
+                <a href="https://www.trustifi.com" class="v-link">Visit website →</a>
+              </div>
+            </div>
+          </article>
+          <article class="vendor-card reveal">
+            <img class="v-img" src="ai_sendmarc.jpg" alt="Sendmarc Email Authentication" />
+            <div class="v-body">
+              <span class="v-cat">Email Authentication</span>
+              <h3>Sendmarc</h3>
+              <p class="v-tag">Protect Your Domain. Prevent Phishing.</p>
+              <p class="v-desc">DMARC implementation and monitoring solution to protect your domain from email spoofing and phishing.</p>
+              <div class="v-foot">
+                <span class="v-rating"><svg viewBox="0 0 24 24"><path d="m12 2 3 6.9 7.6.6-5.8 5 1.8 7.4L12 18l-6.4 3.9 1.8-7.4-5.8-5 7.6-.6z"/></svg>4.3</span>
+                <a href="https://www.sendmarc.com" class="v-link">Visit website →</a>
+              </div>
+            </div>
+          </article>
+          <article class="vendor-card reveal">
+            <img class="v-img" src="ai_macrium.jpg" alt="Macrium Backup &amp; Recovery" />
+            <div class="v-body">
+              <span class="v-cat">Backup &amp; Recovery</span>
+              <h3>Macrium</h3>
+              <p class="v-tag">Reliable. Fast. Trusted.</p>
+              <p class="v-desc">Trusted endpoint backup solution for homes and businesses. Fast, reliable disk imaging and backup with rapid recovery capabilities.</p>
+              <div class="v-foot">
+                <span class="v-rating"><svg viewBox="0 0 24 24"><path d="m12 2 3 6.9 7.6.6-5.8 5 1.8 7.4L12 18l-6.4 3.9 1.8-7.4-5.8-5 7.6-.6z"/></svg>4.5</span>
+                <a href="https://www.macrium.com" class="v-link">Visit website →</a>
+              </div>
+            </div>
+          </article>
+          <article class="vendor-card reveal">
+            <img class="v-img" src="ai_redstor.jpg" alt="Redstor Backup &amp; Recovery" />
+            <div class="v-body">
+              <span class="v-cat">Backup &amp; Recovery</span>
+              <h3>Redstor</h3>
+              <p class="v-tag">Cloud-First. Instant Recovery. Protected.</p>
+              <p class="v-desc">Cloud-first backup and recovery solution with instant data access and ransomware protection.</p>
+              <div class="v-foot">
+                <span class="v-rating"><svg viewBox="0 0 24 24"><path d="m12 2 3 6.9 7.6.6-5.8 5 1.8 7.4L12 18l-6.4 3.9 1.8-7.4-5.8-5 7.6-.6z"/></svg>4.2</span>
+                <a href="https://www.redstor.com" class="v-link">Visit website →</a>
+              </div>
+            </div>
+          </article>
+          <article class="vendor-card reveal">
+            <img class="v-img" src="ai_ninjio.jpg" alt="NINJIO Security Awareness" />
+            <div class="v-body">
+              <span class="v-cat">Security Awareness</span>
+              <h3>NINJIO</h3>
+              <p class="v-tag">Engage. Educate. Empower.</p>
+              <p class="v-desc">Engaging security awareness training that teaches employees to recognize and avoid cyber threats through storytelling.</p>
+              <div class="v-foot">
+                <span class="v-rating"><svg viewBox="0 0 24 24"><path d="m12 2 3 6.9 7.6.6-5.8 5 1.8 7.4L12 18l-6.4 3.9 1.8-7.4-5.8-5 7.6-.6z"/></svg>4.4</span>
+                <a href="https://www.ninjio.com" class="v-link">Visit website →</a>
+              </div>
+            </div>
+          </article>
+          <article class="vendor-card reveal">
+            <img class="v-img" src="ai_atera.jpg" alt="Atera RMM &amp; IT Management" />
+            <div class="v-body">
+              <span class="v-cat">RMM &amp; IT Management</span>
+              <h3>Atera</h3>
+              <p class="v-tag">All-in-One. AI-Powered. Efficient.</p>
+              <p class="v-desc">AI-powered IT management platform combining RMM, PSA, Helpdesk, and automation for MSPs and IT departments.</p>
+              <div class="v-foot">
+                <span class="v-rating"><svg viewBox="0 0 24 24"><path d="m12 2 3 6.9 7.6.6-5.8 5 1.8 7.4L12 18l-6.4 3.9 1.8-7.4-5.8-5 7.6-.6z"/></svg>4.5</span>
+                <a href="https://www.atera.com" class="v-link">Visit website →</a>
+              </div>
+            </div>
+          </article>
+          <article class="vendor-card reveal">
+            <img class="v-img" src="ai_pulseway.jpg" alt="Pulseway RMM &amp; IT Management" />
+            <div class="v-body">
+              <span class="v-cat">RMM &amp; IT Management</span>
+              <h3>Pulseway</h3>
+              <p class="v-tag">Next-Gen RMM. Built for MSPs.</p>
+              <p class="v-desc">All-in-one remote monitoring and management software that helps MSPs and IT teams reduce downtime through automation.</p>
+              <div class="v-foot">
+                <span class="v-rating"><svg viewBox="0 0 24 24"><path d="m12 2 3 6.9 7.6.6-5.8 5 1.8 7.4L12 18l-6.4 3.9 1.8-7.4-5.8-5 7.6-.6z"/></svg>4.5</span>
+                <a href="https://www.pulseway.com" class="v-link">Visit website →</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="promise">
+      <div class="wrap">
+        <div class="pull reveal">
+          <blockquote>We do not just ship licenses. We make our partners the <span class="accent">expert in the room</span>.</blockquote>
+          <p class="pull-by">Rain Networks, distributing security since 2003</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="wrap">
+        <div class="sec-head center reveal"><h2>Frequently asked questions</h2></div>
+        <div class="faq-list">
+          <details>
+            <summary>Who can become a Rain Networks reseller?</summary>
+            <p>We partner with MSPs, technical consulting firms, computer repair shops, OEM hardware providers, and retail computer stores across the United States and Canada.</p>
+          </details>
+          <details>
+            <summary>What does value-added distribution actually mean?</summary>
+            <p>Beyond fulfilling orders, we add pre-sales consulting, technical training, deal registration, marketing resources, and post-sales support so you can sell and deploy with confidence.</p>
+          </details>
+          <details>
+            <summary>Which security categories do you cover?</summary>
+            <p>Endpoint security, email security, backup and recovery, security awareness training, and RMM with IT management, spanning 15 carefully selected vendors.</p>
+          </details>
+          <details>
+            <summary>How is partner pricing determined?</summary>
+            <p>Pricing is based on your requirements and volume. Tell us what you need and we will put together competitive partner pricing for your deals.</p>
+          </details>
+          <details>
+            <summary>Is there a cost to become a partner?</summary>
+            <p>No. Becoming a Rain Networks reseller is free. You get pricing and enablement based on your business needs, and we respond to new inquiries within one business day.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="sec-head center reveal">
+          <h2>Let us help you sell security better</h2>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-card reveal">
+            <span class="ico"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span>
+            <h3>Email us</h3>
+            <a href="mailto:contact@rainnetworks.com">contact@rainnetworks.com</a>
+          </div>
+          <div class="contact-card reveal">
+            <span class="ico"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg></span>
+            <h3>Call us</h3>
+            <a href="tel:14258939800">(425) 893-9800</a>
+          </div>
+          <div class="contact-card reveal">
+            <span class="ico"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <h3>Visit us</h3>
+            <p>16212 Bothell Everett Highway, Suite F180</p>
+            <p>Mill Creek, WA 98012</p>
+          </div>
+          <div class="contact-card reveal">
+            <span class="ico"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg></span>
+            <h3>Who we partner with</h3>
+            <p>MSPs, IT consultants, repair shops, OEMs, and retail computer stores across the US and Canada.</p>
+          </div>
+        </div>
+        <div class="cta-band reveal">
+          <h2>Ready to grow your security practice?</h2>
+          <p class="lead center">Send us your company name, location, and the security categories you are interested in. We will be in touch within one business day.</p>
+          <a href="mailto:contact@rainnetworks.com?subject=Become%20a%20Rain%20Networks%20reseller" class="btn btn-primary">Email our partner team</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="foot-grid">
+      <div class="foot-col">
+        <div class="foot-brand">
+          <img src="Rain.jpg" alt="Rain Networks logo" />
+          <span class="logo-text">Rain Networks</span>
+        </div>
+        <p class="foot-tag">Security-focused value-added distribution. Located near Seattle in Mill Creek, Washington.</p>
+        <div class="foot-contact">
+          <a href="mailto:contact@rainnetworks.com">contact@rainnetworks.com</a>
+          <a href="tel:14258939800">(425) 893-9800</a>
+          <p>16212 Bothell Everett Highway, Suite F180</p>
+          <p>Mill Creek, WA 98012</p>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#solutions">Solutions</a></li>
+          <li><a href="#why-rain">Why us</a></li>
+          <li><a href="#vendors">Vendors</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Solutions</h4>
+        <ul>
+          <li><a href="#solutions">Endpoint Security</a></li>
+          <li><a href="#solutions">Email Security</a></li>
+          <li><a href="#solutions">Backup &amp; Recovery</a></li>
+          <li><a href="#solutions">Security Awareness</a></li>
+          <li><a href="#solutions">RMM &amp; IT Management</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>© 2026 Rain Networks. All rights reserved.</p>
+      <div class="social">
+        <a href="https://www.linkedin.com/company/rainnetworks/" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0zM.2 8.2h4.5V24H.2zM8.5 8.2H13v2.2h.06c.62-1.18 2.14-2.42 4.4-2.42 4.7 0 5.57 3.1 5.57 7.13V24h-4.5v-7.02c0-1.67-.03-3.82-2.33-3.82-2.33 0-2.69 1.82-2.69 3.7V24H8.5z"/></svg></a>
+        <a href="https://twitter.com/Rain_Networks" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.9 2H22l-7.5 8.6L23.3 22h-6.8l-5.3-7-6.1 7H2l8-9.2L1.2 2h7l4.8 6.4L18.9 2zm-2.4 18h1.9L7.6 4H5.6l10.9 16z"/></svg></a>
+        <a href="https://www.facebook.com/RainNetworks1" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></svg></a>
+        <a href="https://www.youtube.com/@RainNetworks" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.12-2.12C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.53A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.12 2.12c1.88.53 9.38.53 9.38.53s7.5 0 9.38-.53a3 3 0 0 0 2.12-2.12A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg></a>
+        <a href="https://www.instagram.com/rainnetworks_official" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 3.68a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zm0 10.16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.41-10.41a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

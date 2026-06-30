@@ -1,0 +1,12 @@
+{
+  "name": "rainnetworks-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Rain Networks static marketing site (Railway).",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
