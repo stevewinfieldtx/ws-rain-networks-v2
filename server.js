@@ -8,6 +8,35 @@ const path = require('path');
 const ROOT = __dirname;
 const PORT = process.env.PORT || 3000;
 
+// Security headers on every response (fixes the audit's "zero security headers" / grade F).
+// CSP is scoped to what this site actually loads: Google Fonts, the ChatDesk live-chat widget,
+// the ElevenLabs voice SDK (jsdelivr + livekit/elevenlabs sockets), and YouTube embeds.
+const CSP = [
+  "default-src 'self'",
+  "base-uri 'self'",
+  "object-src 'none'",
+  "frame-ancestors 'none'",
+  "script-src 'self' 'unsafe-inline' https://drix-chatdesk.up.railway.app https://cdn.jsdelivr.net",
+  "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+  "font-src 'self' https://fonts.gstatic.com data:",
+  "img-src 'self' data: https:",
+  "media-src 'self'",
+  "frame-src https://www.youtube.com https://www.youtube-nocookie.com https://*.elevenlabs.io",
+  "connect-src 'self' https://drix-chatdesk.up.railway.app https://*.elevenlabs.io wss://*.elevenlabs.io https://*.livekit.cloud wss://*.livekit.cloud",
+  "worker-src 'self' blob:",
+  "form-action 'self' https://drix-chatdesk.up.railway.app",
+  "upgrade-insecure-requests",
+].join('; ');
+
+function applySecurity(res) {
+  res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload');
+  res.setHeader('Content-Security-Policy', CSP);
+  res.setHeader('X-Frame-Options', 'DENY');
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+  res.setHeader('Permissions-Policy', 'microphone=(self), camera=(), geolocation=(), browsing-topics=()');
+}
+
 const TYPES = {
   '.html': 'text/html; charset=utf-8',
   '.css': 'text/css; charset=utf-8',
@@ -22,6 +51,7 @@ const TYPES = {
 
 const server = http.createServer((req, res) => {
   try {
+    applySecurity(res);
     let urlPath = decodeURIComponent((req.url || '/').split('?')[0]);
     if (urlPath === '/' || urlPath === '') urlPath = '/index.html';
     // Resolve safely inside ROOT (block path traversal).
