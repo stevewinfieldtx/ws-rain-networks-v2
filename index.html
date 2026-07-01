@@ -14,7 +14,7 @@
   <meta property="og:site_name" content="Rain Networks" />
   <meta property="og:title" content="Rain Networks, Value-Added Cybersecurity Distribution" />
   <meta property="og:description" content="Security-first distribution for resellers and MSPs. Find the right products, get trained, win more deals." />
-  <meta property="og:image" content="https://rain-networks-v2.up.railway.app/server_room_blue.jpg" />
+  <meta property="og:image" content="https://rain-networks-v2.up.railway.app/hero_sunny.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Rain Networks, Value-Added Cybersecurity Distribution" />
   <meta name="twitter:description" content="Security-first distribution for resellers and MSPs. Find the right products, get trained, win more deals." />
@@ -297,9 +297,9 @@
     }
     @media (max-width:600px){.sol-card{flex:1 1 100%}}
     @media (max-width:480px){.hero-ctas .btn{width:100%;justify-content:center}}
-    /* On tall phone screens a landscape video always shows full height (sky-heavy, skyline low).
-       Zoom in slightly, anchored toward the skyline, so the buildings stay the focal point. */
-    @media (max-width:640px){.hero-bg{transform:scale(1.28);transform-origin:50% 74%}}
+    /* On tall phone screens the ultrawide hero is cropped horizontally. Bias the crop to the
+       right so the ferry heading toward the city stays in frame (poster uses the same crop). */
+    @media (max-width:640px){.hero-bg{object-position:92% 42%}}
       /* vendors mega-dropdown */
     .nav-dd{position:relative}
     .nav-dd>.nav-dd-toggle::after{content:"\25BE";font-size:.7em;margin-left:5px;opacity:.7}
@@ -347,7 +347,7 @@
 
     <section id="hero">
       <div class="hero-media">
-        <video class="hero-bg" autoplay muted loop playsinline>
+        <video class="hero-bg" autoplay muted loop playsinline preload="auto" poster="hero_sunny.jpg">
           <source src="sunny.mp4" type="video/mp4" />
         </video>
       </div>
