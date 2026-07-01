@@ -68,7 +68,37 @@ const server = http.createServer((req, res) => {
         });
       }
       const type = TYPES[path.extname(filePath).toLowerCase()] || 'application/octet-stream';
-      res.writeHead(200, { 'Content-Type': type, 'Cache-Control': 'public, max-age=3600' });
+      const total = stat.size;
+
+      // HTTP Range support. iOS Safari refuses to play a video unless the server answers
+      // range requests with 206 Partial Content, so this is required for the hero video on iPhone.
+      const range = req.headers.range;
+      const m = range && /^bytes=(\d*)-(\d*)$/.exec(range);
+      if (m) {
+        let start = m[1] === '' ? null : parseInt(m[1], 10);
+        let end = m[2] === '' ? null : parseInt(m[2], 10);
+        if (start === null) { start = Math.max(0, total - (end || 0)); end = total - 1; }  // suffix: bytes=-N
+        else if (end === null || end >= total) { end = total - 1; }
+        if (isNaN(start) || start > end || start >= total) {
+          res.writeHead(416, { 'Content-Range': `bytes */${total}`, 'Accept-Ranges': 'bytes' });
+          return res.end();
+        }
+        res.writeHead(206, {
+          'Content-Type': type,
+          'Content-Range': `bytes ${start}-${end}/${total}`,
+          'Accept-Ranges': 'bytes',
+          'Content-Length': end - start + 1,
+          'Cache-Control': 'public, max-age=3600',
+        });
+        return fs.createReadStream(filePath, { start, end }).pipe(res);
+      }
+
+      res.writeHead(200, {
+        'Content-Type': type,
+        'Content-Length': total,
+        'Accept-Ranges': 'bytes',
+        'Cache-Control': 'public, max-age=3600',
+      });
       fs.createReadStream(filePath).pipe(res);
     });
   } catch (_e) {
