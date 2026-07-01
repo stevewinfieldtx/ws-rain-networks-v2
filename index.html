@@ -297,6 +297,9 @@
     }
     @media (max-width:600px){.sol-card{flex:1 1 100%}}
     @media (max-width:480px){.hero-ctas .btn{width:100%;justify-content:center}}
+    /* On tall phone screens a landscape video always shows full height (sky-heavy, skyline low).
+       Zoom in slightly, anchored toward the skyline, so the buildings stay the focal point. */
+    @media (max-width:640px){.hero-bg{transform:scale(1.28);transform-origin:50% 74%}}
       /* vendors mega-dropdown */
     .nav-dd{position:relative}
     .nav-dd>.nav-dd-toggle::after{content:"\25BE";font-size:.7em;margin-left:5px;opacity:.7}
